@@ -26,12 +26,39 @@ It avoids paraphrasing and focuses on returning what the source actually says.
 - Query-aware ranking (what, why, how)
 - Adaptive term and pattern boosting
 
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/roomariz/trace-rag.git
+cd trace-rag
+
+# Install dependencies
+pip install -e .
+```
+
+## Prerequisites
+
+- Python 3.10+
+- [Milvus](https://milvus.io/docs/install_standalone-docker.md) running on `localhost:19530`
+- [Ollama](https://ollama.com/) running with embedding model (e.g., `mxbai-embed-large`)
+
+## Quick start
+
+```bash
+# Ingest a PDF
+python exercise/pdf_rag_milvus.py path/to/document.pdf
+
+# Query the document
+python exercise/query.py "Your question here"
+```
+
 ## Example
 
 Command:
 
-```
-python query.py "What is attention?"
+```bash
+python exercise/query.py "What is attention?"
 ```
 
 Output:
@@ -135,10 +162,17 @@ It currently supports:
 
 ## Tech stack
 
-- Python
-- Milvus (vector database)
-- Ollama embeddings
+- Python 3.10+
+- [Milvus](https://milvus.io/) (vector database)
+- [Ollama](https://ollama.com/) (embeddings)
 - Custom sentence-level ranking
+
+## Dependencies
+
+- pymilvus>=2.4.0
+- requests>=2.31.0
+- numpy>=1.24.0
+- pypdf (PDF extraction)
 
 ## Philosophy
 
