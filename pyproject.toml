@@ -17,6 +17,7 @@ tracerag = "tracerag.cli:main"
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
+    "uv>=0.1.0",
 ]
 
 [build-system]

@@ -29,11 +29,10 @@ It avoids paraphrasing and focuses on returning what the source actually says.
 ## Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/roomariz/trace-rag.git
-cd trace-rag
+# Using uv (recommended)
+uv pip install -e .
 
-# Install dependencies
+# Or using pip
 pip install -e .
 ```
 
