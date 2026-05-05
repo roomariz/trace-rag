@@ -46,11 +46,24 @@ pip install -e .
 ## Quick start
 
 ```bash
+# Install
+pip install -e .
+
 # Ingest a PDF
-python exercise/pdf_rag_milvus.py path/to/document.pdf
+tracerag ingest document.pdf
 
 # Query the document
-python exercise/query.py "Your question here"
+tracerag query "What is attention?"
+```
+
+Or using Python directly:
+
+```python
+from tracerag import TraceRAG
+
+rag = TraceRAG()
+rag.ingest_pdf("document.pdf")
+results = rag.search("What is attention?")
 ```
 
 ## Example
